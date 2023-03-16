@@ -1,0 +1,21 @@
+@use "util" as *;
+
+// セクション
+.challenge {
+  // セクション内カードエリアのコンテナ
+  &__container {
+    margin-inline: auto;
+    display: grid;
+    gap: rem(25);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: rem(980);
+  }
+}
+
+// 各カード
+.card {
+  &__desc {
+    width: 230px;
+    font-size: 18px;
+  }
+}
