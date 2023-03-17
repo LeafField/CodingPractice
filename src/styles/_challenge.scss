@@ -2,20 +2,92 @@
 
 // セクション
 .challenge {
+  padding-inline: rem(15);
+  padding-bottom: rem(88);
+
+  // セクションタイトル
+  &__title {
+    font-size: $heading2;
+    font-weight: bold;
+    line-height: 1.16;
+    padding-top: rem(62);
+    text-align: center;
+  }
   // セクション内カードエリアのコンテナ
   &__container {
     margin-inline: auto;
+    max-width: rem(980);
+    margin-top: rem(49);
     display: grid;
     gap: rem(25);
     grid-template-columns: repeat(3, 1fr);
-    max-width: rem(980);
+    grid-template-rows: rem(336);
+    @include mq(sp) {
+      grid-template-columns: minmax(0, 500px);
+      grid-template-rows: auto;
+      justify-content: center;
+    }
+  }
+  // 各カード
+  &__card {
+    box-shadow: 0 rem(3) rem(6) rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 rem(1) rem(2) rgba(0, 0, 0, 0.16);
+      transform: translateY(2px);
+    }
+  }
+
+  // カード下のボタン
+  &__btn {
+    display: block;
+    height: rem(52);
+    width: min(rem(310), per(310, 980));
+    margin-top: rem(46);
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $mainText;
+    font-weight: bold;
+    box-shadow: 0 rem(3) rem(6) 0 rgba(0, 0, 0, 0.16);
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 rem(1) rem(2) rgba(0, 0, 0, 0.16);
+      transform: translateY(2px);
+    }
+    @include mq(sp) {
+      width: min(100%, 500px);
+    }
   }
 }
 
-// 各カード
+// 各カードの中身
 .card {
+  &__under {
+    padding: rem(20);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   &__desc {
-    width: 230px;
-    font-size: 18px;
+    font-size: $mainText;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: -0.25em;
+    letter-spacing: -0.01em;
+  }
+
+  &__timestamp {
+    font-size: $subText;
+    line-height: 1.13;
+    @include mq(sp) {
+      margin-top: rem(16);
+    }
   }
 }

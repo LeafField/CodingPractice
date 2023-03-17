@@ -1,0 +1,17 @@
+@use "util" as *;
+
+// フッター
+.footer {
+  width: 100%;
+  height: rem(80);
+  background-color: #333;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & small {
+    color: #fff;
+    font-size: clamp(rem(10), vw(14, 767), rem(14));
+    font-weight: bold;
+  }
+}

@@ -4,6 +4,12 @@
 .header {
   width: 100%;
   height: clamp(rem(45), vw(45, 375), rem(80));
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 
   // ヘッダーコンテナ
   &__container {

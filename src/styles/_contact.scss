@@ -1,0 +1,53 @@
+@use "util" as *;
+
+// セクション
+.contact {
+  background-image: url(../images/tim-bogdanov-4uojMEdcwI8-unsplash.jpg);
+  background-size: cover;
+  background-position: center top;
+  width: 100%;
+  height: rem(455);
+
+  // セクションタイトル
+  &__title {
+    text-align: center;
+    font-size: clamp(rem(24), vw(36, 768), rem(36));
+    font-weight: bold;
+    color: #fff;
+    padding-top: rem(61);
+  }
+
+  // タイトル下テキスト
+  &__desc {
+    font-size: $subText;
+    font-weight: bold;
+    line-height: 1.75;
+    color: #fff;
+    text-align: center;
+    padding-top: rem(42);
+  }
+
+  // お問い合わせボタン
+  &__btn {
+    display: block;
+    margin-top: 44px;
+    margin-inline: auto;
+    width: rem(210);
+    height: rem(54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(16);
+    font-weight: bold;
+    color: #fff;
+    border-radius: rem(5);
+    box-shadow: 0 rem(3) rem(6) 0 rgba(0, 0, 0, 0.16);
+    background-color: #83032a;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 rem(1) rem(2) 0 rgba(0, 0, 0, 0.16);
+      transform: translateY(rem(2));
+    }
+  }
+}

@@ -3,6 +3,10 @@ $breakpoints: (
   pc: "(min-width:768px)",
 );
 
+$heading2: clamp(24 / 16 * 1rem, 36 / 767 * 100vw, 32 / 16 * 1rem);
+$mainText: clamp(1rem, 16 / 767 * 100vw, 18 / 16 * 1rem);
+$subText: clamp(12 / 16 * 1rem, 16 / 767 * 100vw, 1rem);
+
 @mixin mq($breakpoint) {
   @media screen and #{map-get($breakpoints,$breakpoint)} {
     @content;
@@ -15,4 +19,8 @@ $breakpoints: (
 
 @function vw($pixel, $basesize) {
   @return calc($pixel / $basesize * 100vw);
+}
+
+@function per($pixel, $basesize) {
+  @return calc($pixel / $basesize * 100%);
 }
